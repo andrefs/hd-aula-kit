@@ -1,7 +1,11 @@
-\frametitle{RegEx functions}
-\begin{itemize}
-  \item \texttt{re.search}
-  \item \texttt{re.match}
-  \item \texttt{re.findall}
-  \item \texttt{re.sub}
-\end{itemize}
+\frametitle{Noise removal}
+Using Audacity on your computer:
+  \begin{enumerate}
+    \item Open your audio file in Audacity.
+    \item Select a pure noise area of the audio track.
+    \item Open the \texttt{Effect / Noise reduction} menu.
+    \item Click \texttt{Get Noise Profile}.
+    \item Select the entire audio track.
+    \item Open the \texttt{Effect / Noise reduction} menu again.
+    \item Clik \texttt{OK} to apply the filter.
+  \end{enumerate}
