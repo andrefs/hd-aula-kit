@@ -1,0 +1,289 @@
+\usepackage{fontspec}
+\usepackage{xunicode} %Unicode extras!
+\usepackage{xltxtra}  %Fixes
+\usepackage[final,protrusion=true]{microtype}
+%\usepackage[utf8]{inputenc}
+\usepackage{courier}
+\usepackage{alltt}
+\usepackage{amsmath}
+\usepackage{marvosym}
+\usepackage{animate}
+\usepackage{tikz}
+
+\usepackage{multicol}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Create PDF with slides and notes side-by-side for presenting   %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% % http://www.phillme.de/cms/node/14
+% % http://zeekish.wordpress.com/2011/03/18/latex-beamer-presentation-on-dual-display-laptop-projector/
+% 
+% \usepackage{pgfpages}
+% \setbeameroption{show notes}
+% \setbeameroption{show notes on second screen=right}
+% \pgfpagesuselayout{two screens with optional second} %pgfpages
+% 
+% % Patch because pdfpages has a bug which makes it not work with
+% % xe(la)tex
+% \renewcommand\pgfsetupphysicalpagesizes{%
+%     \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+% }
+
+\mode<presentation>
+
+\usetheme{default}
+%\setbeamercovered{transparent}
+\setbeamertemplate{navigation symbols}{} % deactivate navigation symbols
+\useinnertheme[shadow]{rounded} % make blocks rounded
+\setbeamertemplate{itemize items}{\textbullet} % use textbullets for itemize
+
+%%%%%%%%%%%%
+% Commands %
+%%%%%%%%%%%%
+
+\newcommand{\fullframeimage}[2][width=\paperwidth]
+{{
+\usebackgroundtemplate{\includegraphics[#1]{#2}}
+\begin{frame}[plain]
+\end{frame}
+}}
+
+%%%%%%%%%%%
+% Colors  %
+%%%%%%%%%%%
+
+%\definecolor{bgin}{HTML}{F7FBFC}
+%\definecolor{bgout}{HTML}{ADD9E4}
+\definecolor{textcolor}{HTML}{3C3C3C}
+\definecolor{h1color}{HTML}{D14233}
+\definecolor{hpluscolor}{HTML}{5288AC}
+
+\setbeamercolor{title}{fg=h1color}
+\setbeamercolor{frametitle}{fg=h1color}
+\setbeamercolor{structure}{fg=textcolor}
+\setbeamercolor{normal text}{fg=textcolor}
+\setbeamercolor{block title}{fg=white,bg=hpluscolor}
+\setbeamercolor{emph}{fg=hpluscolor}
+\renewcommand<>{\emph}[1]{%
+  {\usebeamercolor[fg]{emph}\only#2{\itshape}#1}%
+}
+%\setbeamercolor{block title alerted}{fg=white,bg=purple}
+%\setbeamercolor{alerted text}{fg=purple}
+
+
+\definecolor{links}{HTML}{5288AC}
+%\hypersetup{colorlinks,linkcolor=5288AC,urlcolor=5288AC}
+
+%%%%%%%%%%%%%%
+% Background %
+%%%%%%%%%%%%%%
+
+%%% gradient
+% \setbeamertemplate{background canvas}[vertical shading][bottom=red!30, top=white]
+%%% image
+% \usebackgroundtemplate{\pgfimage[width=\paperwidth]{img/make}
+
+
+\usebackgroundtemplate{\includegraphics[height=\paperheight]{imgs/bg}} % use image as background
+
+% \usebackgroundtemplate{
+%   \begin{tikzpicture}[remember picture,overlay]
+%     \node [inner color=bgin, outer color=bgout, anchor=north, minimum width=\paperwidth, minimum height=\paperheight] (box) at (current page.north){};
+%   \end{tikzpicture}
+% }
+
+%%%%%%%%%
+% Fonts %
+%%%%%%%%%
+
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{ChunkFive}
+\setmonofont[Scale=0.86]{DejaVu Sans Mono Bold}
+%\setsansfont[Scale=0.86]{Andale Mono}
+\beamertemplatenavigationsymbolsempty
+
+\newfontfamily\chunkfive[]{ChunkFive}
+\setbeamerfont{subtitle}  {family=\chunkfive,size={\fontsize{60pt}{60pt}}}
+\setbeamerfont{title}     {family=\chunkfive,size={\fontsize{50pt}{50pt}}}
+\setbeamerfont{author}    {family=\chunkfive,size={\fontsize{14pt}{14pt}}}
+\setbeamerfont{institute} {family=\chunkfive,size={\fontsize{14pt}{14pt}}}
+\setbeamerfont{frametitle}{family=\chunkfive,size={\fontsize{30pt}{30pt}}}
+
+
+%%%%%%%%%%%%%%
+% Title page %
+%%%%%%%%%%%%%%
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+	\begin{centering}
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\lowercase\expandafter{\inserttitle}\par}
+	%{\fontsize{60pt}{60pt}\selectfont \inserttitle\par}
+    \vspace{0.5cm}
+	%\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+
+
+
+  \begin{figure}
+      \centering
+        \includegraphics[width=0.3\linewidth]{imgs/army}
+      %\begin{subfigure}{.20\textwidth}
+      %  \includegraphics[width=\linewidth]{imgs/mario}
+      %\end{subfigure}
+      %\begin{subfigure}{.020\textwidth}
+      %~
+      %\end{subfigure}%
+      %\begin{subfigure}{.30\textwidth}
+      %  \includegraphics[width=\linewidth]{imgs/logo}
+      %\end{subfigure}%
+  \end{figure}\par
+
+
+	\bigskip
+	\usebeamerfont{author}\insertauthor\par
+    \vspace{-.3cm}
+
+    %\begin{figure}
+    %    \centering
+    %    \begin{subfigure}{.10\textwidth}
+    %      \flushright
+    %      \includegraphics[width=.9\linewidth]{imgs/sapo2}
+    %    \end{subfigure}%
+    %    \begin{subfigure}{.020\textwidth}
+    %    ~
+    %    \end{subfigure}%
+    %    \begin{subfigure}{.080\textwidth}
+    %      \flushleft
+    %      \includegraphics[width=.9\linewidth]{imgs/bot}
+    %    \end{subfigure}
+    %    \begin{subfigure}{.110\textwidth}
+    %      \flushright
+    %      %\usebeamerfont{institute}\expandafter\expandafter{\bf \insertinstitute}\par
+    %      {\bf \number\year}
+    %    \end{subfigure}
+    %\end{figure}\par
+	\end{centering}
+}
+
+
+%%%%%%%%%%%%%%%%
+% Descriptions %
+%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{description item}{\textbf{\insertdescriptionitem:}}
+
+%%%%%%%%%%%%%%%
+% Frame title %
+%%%%%%%%%%%%%%%
+
+
+\defbeamertemplate*{frametitle}{customized}[1][]
+{
+	\begin{centering}
+	\medskip
+	%\usebeamerfont{frametitle}\expandafter\expandafter{\insertframetitle}\par
+	\usebeamerfont{frametitle}\expandafter\expandafter{\insertframetitle}\par
+	\end{centering}
+}
+
+%%%%%%%%%
+% Quote %
+%%%%%%%%%
+
+\defbeamertemplate*{quote begin}{customized}
+{\beamercolorbox[vmode]{quote}}
+
+\defbeamertemplate*{quote end}{customized}
+{\endbeamercolorbox}
+
+%%%%%%%%%%%%%%%%
+% Enumerations %
+%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Listings                                               %
+% uses minted (needs python-pygments), synhi is better!  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{upquote}
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{newverbs}
+
+\definecolor{inline}{RGB}{187,57,82}
+\definecolor{lstbg}{RGB}{22,43,58}
+
+\newverbcommand{\cverb}{\color{inline}}{}
+
+\usemintedstyle{tango}
+\setminted{linenos, bgcolor=white, fontsize=\footnotesize, baselinestretch=0.8}
+\setminted[python]{linenos, bgcolor=white, fontsize=\footnotesize, baselinestretch=0.8}
+
+
+% Cross reference in enums
+\def\namedlabel#1#2{\begingroup
+    #2%
+    \def\@currentlabel{#2}%
+    \phantomsection\label{#1}\endgroup
+}
+
+%%%%%%%%%%%
+% Blocks  %
+%%%%%%%%%%%
+
+\setbeamertemplate{blocks}[rounded] % [shadow]
+
+
+%%%%%%%%%%
+% Logos  %
+%%%%%%%%%%
+
+\newcommand{\nologo}{\setbeamertemplate{logo}{}} % command to set the logo to nothing
+\newcommand{\defaultlogo}{\logo{\vspace{-.31cm}\hspace{-.31cm}\pgfimage[width=.08\textwidth]{imgs/bot}}}
+
+%%%%%%%%%%%%%
+% Sections  %
+%%%%%%%%%%%%%
+
+\AtBeginSection{\nologo \frame{\sectionpage} \defaultlogo}
+\setbeamertemplate{section page}
+{
+  \begin{centering}
+    %{\usebeamerfont{section name}\usebeamercolor[fg]{section name}\sectionname~\insertsectionnumber}
+    %\vskip1em\par
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\lowercase\expandafter{\insertsectionhead}\par}
+  \end{centering}
+}
+\def\subsubsectionpage{\usebeamertemplate*{subsubsection page}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Descriptions with labels right aligned %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{aligndesc}[1]
+   {\begin{list}{}%
+    {\renewcommand\makelabel[1]{\hfill##1:}%
+    \settowidth\labelwidth{\makelabel{#1}}%
+    \setlength\leftmargin{\labelwidth}
+    \addtolength\leftmargin{\labelsep}}}
+   {\end{list}}
+
+
+
+
+
+
+\setbeamertemplate{frametitle continuation}{}

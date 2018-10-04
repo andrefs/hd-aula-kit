@@ -1,0 +1,8 @@
+/* Gibson-BoldItalic webfont (new-bulletproof) */ 
+@font-face {
+    font-family: 'Gibson-BoldItalic';
+    src: url('Gibson-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('Gibson-BoldItalic.woff') format('woff'),
+         url('Gibson-BoldItalic.ttf')  format('truetype'),
+         url('Gibson-BoldItalic.svg#webfont') format('svg');
+}

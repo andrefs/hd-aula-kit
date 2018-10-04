@@ -1,0 +1,8 @@
+/* Gibson-Bold webfont (new-bulletproof) */ 
+@font-face {
+    font-family: 'Gibson-Bold';
+    src: url('Gibson-Bold.eot?#iefix') format('embedded-opentype'),
+         url('Gibson-Bold.woff') format('woff'),
+         url('Gibson-Bold.ttf')  format('truetype'),
+         url('Gibson-Bold.svg#webfont') format('svg');
+}

@@ -1,0 +1,8 @@
+/* Gibson-SemiBoldItalic webfont (new-bulletproof) */ 
+@font-face {
+    font-family: 'Gibson-SemiBoldItalic';
+    src: url('Gibson-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('Gibson-SemiBoldItalic.woff') format('woff'),
+         url('Gibson-SemiBoldItalic.ttf')  format('truetype'),
+         url('Gibson-SemiBoldItalic.svg#webfont') format('svg');
+}

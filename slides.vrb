@@ -1,0 +1,7 @@
+\frametitle{RegEx functions}
+\begin{itemize}
+  \item \texttt{re.search}
+  \item \texttt{re.match}
+  \item \texttt{re.findall}
+  \item \texttt{re.sub}
+\end{itemize}

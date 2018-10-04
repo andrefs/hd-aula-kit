@@ -1,0 +1,8 @@
+/* Gibson-Italic webfont (new-bulletproof) */ 
+@font-face {
+    font-family: 'Gibson-Italic';
+    src: url('Gibson-Italic.eot?#iefix') format('embedded-opentype'),
+         url('Gibson-Italic.woff') format('woff'),
+         url('Gibson-Italic.ttf')  format('truetype'),
+         url('Gibson-Italic.svg#webfont') format('svg');
+}

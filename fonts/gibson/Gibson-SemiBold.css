@@ -1,0 +1,8 @@
+/* Gibson-SemiBold webfont (new-bulletproof) */ 
+@font-face {
+    font-family: 'Gibson-SemiBold';
+    src: url('Gibson-SemiBold.eot?#iefix') format('embedded-opentype'),
+         url('Gibson-SemiBold.woff') format('woff'),
+         url('Gibson-SemiBold.ttf')  format('truetype'),
+         url('Gibson-SemiBold.svg#webfont') format('svg');
+}
